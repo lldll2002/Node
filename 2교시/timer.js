@@ -46,3 +46,5 @@ const immediate2 = setImmediate(() => {
 });
 
 clearImmediate(immediate);
+
+console.log(process.env)
