@@ -1,0 +1,12 @@
+      edit.addEventListener('click', async () => { //수정 버튼 클릭이라는 이벤트를 넣겠다
+        let userInput = prompt('바꿀 이름을 입력해주세요.')
+          if(userInput !==null)  {
+            alert('수정되었습니다.');
+          } else {
+            alert('취소하셨습니다.');
+          }        
+        const name = prompt('바꿀 이름을 입력해주세요.'); // 입력 창을 띄운다 , 확인과 취소로 나뉘어있는 창
+        console.log(name);
+        if(!name){  // name을 쓰지 않은 상태라면,(!)
+          return alert('이름을 반드시 입력해야합니다.');  // 확인 만 있는 창
+        }
