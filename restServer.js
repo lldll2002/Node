@@ -60,11 +60,11 @@ http.createServer(async (req, res) => {
           return res.end('ok');
         });
       }
-    } else if (req.method === 'DELETE') {
-      if (req.url.startsWith('/user/')) {
-        const key = req.url.split('/')[2];
+    } else if (req.method === 'DELETE') {   // PUT 이랑 비슷한 형태
+      if (req.url.startsWith('/user/')) {   // 삭제하려는 user가 계속 바뀔 테니까, user로 시작한다면~
+        const key = req.url.split('/')[2];  // 0,1,2번째
         console.log('key',key)
-        delete users[key];
+        delete users[key];    // 객체의 키 값을 지울 때
         res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
         return res.end('ok');
       }
