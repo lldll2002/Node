@@ -1,0 +1,27 @@
+// creatServer를 여러 번 호출 하면 한 번에 여러 개 서버 실행됨
+// 같게 지정하면 EADDRINUSE 에러 발생
+
+const http = require('http');
+
+http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'}); 
+  res.write('<h1>Hello Node 8080!</h1>'); 
+  res.end('<p>Hello Server!</p>'); 
+})
+  .listen(8080, () => {   
+    console.log('Server is running on port 8080');
+  });
+
+  http.createServer((req, res) => {
+    res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'}); 
+    res.write('<h1>Hello Node 8081!</h1>'); 
+    res.end('<p>Hello Server!</p>'); 
+  })
+    .listen(8081, () => {   // 포트안에 8080만 8081로 바꿔서 열면 여러개 열림
+      console.log('Server is running on port 8081');
+    });
+
+
+// 그러나 이렇게 되면 write와 end에 문자열을 넣는 것이 비효율적이 됨
+// fs 모듈로 html을 읽어서 전송하게 됨
+// write가 버퍼도 전송 가능
