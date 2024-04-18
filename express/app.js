@@ -1,3 +1,5 @@
+// 교보재에 있는 const dotenv = require('dotenv'); 는 옛날 느낌.
+// 요즘은 import ~~ from ''; 을 더 많이 씀
 import express from 'express';
 // import morgan from 'morgan';
 import morgan from 'morgan';
