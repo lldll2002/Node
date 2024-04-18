@@ -4,13 +4,13 @@
   "description": "익스프레스를 배우자",
   "main": "app.js",
   "type": "module",
-  
   "scripts": {
     "start": "nodemon app"
   },
   "author": "Jin",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
