@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/id/:id', (req, res) => {
   // /id/:id를 라우터로 잡아버릴거야~
-  console.log(req.params, req.query);
+  // console.log(req.params, req.query);
   console.log('req.params', req.params);
   console.log('req.query', req.query);
   console.log('req.params.id', req.params.id);
