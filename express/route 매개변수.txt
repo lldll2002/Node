@@ -1,0 +1,7 @@
+:id를 넣으면 req.params.id로 받을 수 있다.
+:id 가 params에 담긴다는게 중요.
+req.params. 안에 담긴 정보
+
+/users/123?limit=5&skip=10
+?뒤는 키밸류 쿼리스트링으로 받아온다.
+req.query 안에 담긴 정보

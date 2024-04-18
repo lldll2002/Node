@@ -1,23 +1,27 @@
-// 교보재에 있는 const dotenv = require('dotenv'); 는 옛날 느낌.
-// 요즘은 import ~~ from ''; 을 더 많이 씀
+// 교보재에 있는 const ~~~~ = require('~~~~'); 는 옛날 느낌.
+// 요즘은 import ~~ from '~~'; 을 더 많이 씀
 import express from 'express';
-// import morgan from 'morgan';
+// const express = require('express');
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import dotenv from 'dotenv';
 
 import path from 'path';
-// const path = require('path');
 const __dirname = path.resolve();
 
+// indexRouter의 get은 /user와 /가 합쳐져서 GET /user가 된다.
 dotenv.config();
+import indexRouter from './routes/index.js';
+import userRouter from './routes/user.js';
+
+// 3000번 포트로 연다
+// app이 express를 받아서 set으로 들어감
 const app = express();
 app.set('port', process.env.PORT || 3000);
 
 // const app = express();
 // app.set('port', process.env.PORT || 3001);
-// app이 express를 받아서 set으로 들어감
 
 app.use(morgan('dev'));
 app.use('/', express.static(path.join(__dirname, 'public')));
@@ -36,6 +40,14 @@ app.use(
     name: 'session-cookie',
   })
 );
+// http://localhost:3001 에서 뒤에 /index, /user 치면 나온다.
+app.use('/index', indexRouter);
+app.use('/user', userRouter);
+
+app.use((req, res, next) => {
+  res.status(404).send('Not Found');
+});
+
 app.get('/', (req, res) => {
   // res.send('Hello, Express');
   res.sendFile(path.join(__dirname, '/index.html'));
