@@ -1,0 +1,21 @@
+{
+  "name": "cafe",
+  "version": "0.0.1",
+  "private": true,
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server"
+  },
+  "author": "이진영",
+  "license": "진영카페",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "fs": "^0.0.1-security",
+    "mongoose": "^8.3.2",
+    "morgan": "^1.10.0"
+  }
+}

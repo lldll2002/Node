@@ -1,0 +1,28 @@
+User
+{
+  "id": 1,
+  "userId": 1,
+  "name": "이진영"
+  "
+}
+
+get/list
+
+get/id/:id
+post/
+put/id/:id
+delete/id/:id
+
+post
+
+get/list?maxCost&3000   // 3000원 이하 아이템만 부르는 쿼리스트링
+item info 정보 조회
+item 
+
+
+
+
+
+
+auth
+post znzl
